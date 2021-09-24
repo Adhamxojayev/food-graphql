@@ -29,7 +29,7 @@ const ORDER = `
     json_agg(os) as order_sets
     from orders o
     natural join tables t  
-    inner join (
+    left join (
     select
         os.order_set_id,
         os.count,
