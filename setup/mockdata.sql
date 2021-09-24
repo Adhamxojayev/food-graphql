@@ -16,7 +16,7 @@ insert into tables (table_number) values (4);
 insert into orders (table_id) values (1);
 insert into orders (table_id) values (3);
 
-insert into order_sets (steak_id, order_id, count, order_set_price) values (2, 1, 2, 42000);
+insert into order_sets (steak_id, order_id, count, order_set_price) values (2, 1, 2, 21000);
 insert into order_sets (steak_id, order_id, count, order_set_price) values (3, 1, 1, 23000);
 
 insert into order_sets (steak_id, order_id, count, order_set_price) values (1, 2, 1, 27000);

@@ -2,7 +2,7 @@ import model from "../order/model.js";
 
 export default {
     Query: {
-        orders: async (_, {orderId, tableId, pagination = {}}) => await model.orders(orderId, tableId,pagination)
+        orders: async () => await model.orders()
     },
 
     Mutation:{
@@ -96,6 +96,24 @@ export default {
                 }
             }
         },
+        payadd : async (_,args) => {
+            try {
+                let pay = await model.payadd(args)
+                if(pay){
+                    return{
+                        status: 201,
+                        message: 'the order pay',
+                        data: pay
+                    }
+                }else throw new Error('error')
+            } catch (error) {
+                return {
+                    status: 400,
+                    message: error,
+                    data: null
+                }
+            }
+        }
     },
 
     Order:{

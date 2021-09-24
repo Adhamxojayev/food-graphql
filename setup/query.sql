@@ -42,3 +42,6 @@ order by t.table_id;
 	-- from orders o
 	-- left join tables t on t.table_id = o.table_id
 	-- order by o.order_created_at desc
+
+
+	select * from steaks;

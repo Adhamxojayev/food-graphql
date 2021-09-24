@@ -11,6 +11,7 @@ export default gql`
     deleteOrder(orderId: ID!):MutationResonse!
     deleteOrderSet(orderSetId: ID!):MutationResonse!
     updateOrder(orderSetId: ID! count: Int!): MutationResonse!
+    payadd(orderId: ID!): MutationResonse!
   }
 
   type Order {

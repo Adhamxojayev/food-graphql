@@ -76,6 +76,12 @@ const PUT_ORDER = `
 	WHERE order_set_id = $1
 	RETURNING os.*
 `
+const PAY_ORDER = `
+    update orders set
+        order_paid = true
+    where order_id = $1
+    returning *
+`
 
 const orders = () => {
     try {
@@ -128,11 +134,20 @@ const updateOrder = ({orderSetId, count}) => {
     }
 }
 
+const payadd = ({orderId}) => {
+    try {
+        return fetch(PAY_ORDER, [orderId])
+    } catch (error) {
+        throw error
+    }
+}
+
 export default {
     orders,
     insertOrder,
     insertOrderSets,
     deleteOrder,
     deleteOrderSet,
-    updateOrder
+    updateOrder,
+    payadd
 }
