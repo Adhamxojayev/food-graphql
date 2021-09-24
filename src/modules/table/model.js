@@ -10,7 +10,7 @@ const TABLES = `
             else true
         end as table_busy   
     from tables t
-        inner join (
+        left join (
         select
         *
         from orders
